@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "965a542d-f0b6-475f-bbf0-ff00dffd9599",
+		"name": "[Submission]Ordivo-Product-App",
+		"description": "The Postman collection for the Ordivo-Product-App project contain a set of requests that correspond to the REST API endpoints for the application. These include requests for creating, retrieving, updating, and deleting products, as well as requests for adding products to a cart, checking out from the cart, and listing order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GET List Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{ver}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{ver}}",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Store Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Nintendo Switch\",\r\n        \"price\": \"3500000.00\",\r\n        \"description\": \"a console\",\r\n        \"stock\": 10\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{ver}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{ver}}",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Detail Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{ver}}/products/63f8ccf5a4780000880019f4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{ver}}",
+								"products",
+								"63f8ccf5a4780000880019f4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "POST Add to Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"cart_id\" : \"63f8da9e93770000f90025d4\",\r\n        \"product_id\": \"63f8ccf5a4780000880019f4\",\r\n        \"quantity\": 2,\r\n        \"description\": \"red color\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{ver}}/carts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{ver}}",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Checkout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cart_id\" : \"63f8da9e93770000f90025d4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{ver}}/carts/checkout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{ver}}",
+								"carts",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "GET List Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{ver}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{ver}}",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
