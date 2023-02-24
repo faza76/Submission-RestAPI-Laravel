@@ -26,4 +26,4 @@ Status Completion
 - [x] Summary Product & Order
 
 ### Demo Application
-![](https://github.com/faza76/demo.gif)
+![](https://github.com/faza76/Submission-RestAPI-Laravel/demo.gif)
