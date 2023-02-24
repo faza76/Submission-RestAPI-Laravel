@@ -27,7 +27,7 @@ Route::post('/products', 'ProductController@store');
 Route::get('/carts', 'CartController@index');
 Route::get('/carts/{id}', 'CartController@checkout');
 Route::post('/carts', 'CartController@store');
-Route::get('/carts/checkout/{id}', 'CartController@checkout');
+Route::get('/carts/checkout', 'CartController@checkout');
 
 Route::get('/cart-items', 'CartItemController@index');
 Route::get('/cart-items/{id}', 'CartItemController@show');
